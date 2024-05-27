@@ -27,3 +27,5 @@ Doc on Falcon LLM was made, and presented to coordinator. Group(2) task of Slack
 Functions alloted, Slack API docs were studied and examples of integration were checked.
 ### 25/05/2024:
 Updated the google sites project and work up on Slack API
+### 27/05/2024: 
+Performed 1st stage dev of slack bot with several features and checked the Google Calendar API integration
