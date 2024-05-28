@@ -15,7 +15,7 @@ Details of the interns were acquired, and custom components were embedded to the
 ### 18/05/2024:
 Edited the site and custom component embeddings
 
-## Week 2: Google Sites + Slack Bot with Falcon LLM
+## Week 2: Google Sites + Slack Bot With Falcon LLM
 
 ### 21/05/2024:
 Final Changes to the site were made along with adding the interns of BCDA, VOSS, ADTP
@@ -27,6 +27,9 @@ Doc on Falcon LLM was made, and presented to coordinator. Group(2) task of Slack
 Functions alloted, Slack API docs were studied and examples of integration were checked.
 ### 25/05/2024:
 Updated the google sites project and work up on Slack API
+
+## Week 3: Slack Bot With Falcon LLM
+
 ### 27/05/2024: 
 Performed 1st stage dev of slack bot with several features and checked the Google Calendar API integration
 ### 28/05/2024:
