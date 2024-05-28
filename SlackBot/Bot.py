@@ -47,7 +47,7 @@ def assign_role():
     user_id = data.get('user_id')
     text = data.get('text')
     channel_id = data.get('channel_id')
-    client.chat_postMessage(channel=channel_id, text='Assigned role {} to <@{}>'.format(text, user_id))
+    client.chat_postMessage(channel=channel_id, text='A ssigned role {} to <@{}>'.format(text, user_id))
     return Response(), 200
 
 # Reminders Feature
