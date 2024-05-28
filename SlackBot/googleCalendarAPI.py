@@ -24,7 +24,7 @@ def get_google_calendar_service():
         else:
             flow = InstalledAppFlow.from_client_secrets_file(
                 creds_path, SCOPES)
-            creds = flow.run_local_server(port=0)
+            creds = flow.run_local_server(port=3500)
         # Save the credentials for the next run
         with open(token_path, 'w') as token:
             token.write(creds.to_json())
@@ -37,7 +37,7 @@ def get_upcoming_events():
     # Call the Calendar API
     now = datetime.datetime.utcnow().isoformat() + 'Z'  # 'Z' indicates UTC time
     events_result = service.events().list(calendarId='primary', timeMin=now,
-                                          maxResults=10, singleEvents=True,
+                                          maxResults=25, singleEvents=True,
                                           orderBy='startTime').execute()
     events = events_result.get('items', [])
     return events
