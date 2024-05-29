@@ -34,3 +34,5 @@ Updated the google sites project and work up on Slack API
 Performed 1st stage dev of slack bot with several features and checked the Google Calendar API integration
 ### 28/05/2024:
 Figured out the Google Calendar API, started using Falcon LLM, worked on the create grp, assign roles and add to grp functions of the bot, while performing tests on features
+### 29/05/2024:
+Added the Falcon LLM API call to a test file, worked on the functions a bit and checked ways to implement the Falcon 7B model. Before settling to use the API, tried downloading the model locally, loading on colab, etc.
