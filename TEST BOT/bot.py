@@ -1,4 +1,4 @@
-# from slack_bolt.adapter.flask import SlackRequestHandler
+from slack_bolt.adapter.flask import SlackRequestHandler
 from slack_bolt import App
 from slack_bolt.adapter.socket_mode import SocketModeHandler
 from googleapiclient.discovery import build
@@ -14,8 +14,9 @@ import datetime
 
 load_dotenv()
 
-# Initialize Slack app and Falcon LLM via Hugging Face Inference API
+# Initialize Slack app and Falcon LLM via Hugging Face Inference APICLIENT_SECRETS_FILE
 app = App(token=os.environ.get("SLACK_BOT_TOKEN"))
+
 API_TOKEN = os.getenv("API_TOKEN")
 API_URL = "https://api-inference.huggingface.co/models/tiiuae/falcon-7b-instruct"
 headers = {"Authorization": f"Bearer {API_TOKEN}"}
@@ -24,9 +25,6 @@ headers = {"Authorization": f"Bearer {API_TOKEN}"}
 scheduler = BackgroundScheduler()
 
 SCOPES = ['https://www.googleapis.com/auth/calendar.readonly']
-
-
-
 
 # Meeting Schedule Feature
 def get_google_calendar_service():
