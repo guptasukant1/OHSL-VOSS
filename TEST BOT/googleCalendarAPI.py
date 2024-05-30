@@ -1,6 +1,5 @@
 import os
 import datetime
-import google.auth
 from google.oauth2.credentials import Credentials
 from google_auth_oauthlib.flow import InstalledAppFlow
 from google.auth.transport.requests import Request
@@ -15,8 +14,10 @@ def get_google_calendar_service():
     # automatically when the authorization flow completes for the first time.
     creds_path = os.path.join(os.path.dirname(__file__), 'credentials.json')
     token_path = os.path.join(os.path.dirname(__file__), 'token.json')
+
     if os.path.exists('token.json'):
         creds = Credentials.from_authorized_user_file(token_path, SCOPES)
+    
     # If there are no (valid) credentials available, let the user log in.
     if not creds or not creds.valid:
         if creds and creds.expired and creds.refresh_token:
