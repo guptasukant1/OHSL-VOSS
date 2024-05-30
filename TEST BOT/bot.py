@@ -14,7 +14,7 @@ import datetime
 
 load_dotenv()
 
-# Initialize Slack app and OpenAI
+# Initialize Slack app and Falcon LLM via Hugging Face Inference API
 app = App(token=os.environ.get("SLACK_BOT_TOKEN"))
 API_TOKEN = os.getenv("API_TOKEN")
 API_URL = "https://api-inference.huggingface.co/models/tiiuae/falcon-7b-instruct"
@@ -28,29 +28,7 @@ SCOPES = ['https://www.googleapis.com/auth/calendar.readonly']
 
 
 
-# # Meeting Schedule Feature
-# def get_meeting_schedule():
-#     service = build('calendar', 'v3', developerKey=os.getenv("GOOGLE_API_KEY"))
-#     now = datetime.datetime.utcnow().isoformat() + 'Z'
-#     events_result = service.events().list(
-#         calendarId='primary', timeMin=now, maxResults=10, singleEvents=True, orderBy='startTime'
-#     ).execute()
-#     events = events_result.get('items', [])
-#     return events
-
-# @app.command("/schedule")
-# def show_schedule(ack, respond):
-#     ack()
-#     events = get_meeting_schedule()
-#     if not events:
-#         respond("No upcoming meetings found.")
-#     else:
-#         schedule = "Here are your upcoming meetings:\n"
-#         for event in events:
-#             start = event['start'].get('dateTime', event['start'].get('date'))
-#             schedule += f"{start} - {event['summary']}\n"
-#         respond(schedule)
-
+# Meeting Schedule Feature
 def get_google_calendar_service():
     creds = None
     # The file token.json stores the user's access and refresh tokens, and is created
@@ -81,7 +59,7 @@ def get_upcoming_events():
     # Call the Calendar API
     now = datetime.datetime.utcnow().isoformat() + 'Z'  # 'Z' indicates UTC time
     events_result = service.events().list(calendarId='primary', timeMin=now,
-                                          maxResults=20, singleEvents=True,
+                                          maxResults=10, singleEvents=True,
                                           orderBy='startTime').execute()
     events = events_result.get('items', [])
     return events
@@ -112,7 +90,7 @@ def set_reminder_channel(ack, respond, command):
     channel_name = command['text'].strip()
 
     try:
-        # Convert channel name to channel ID
+        # To convert channel name to channel ID
         response = app.client.conversations_list()
         channels = response['channels']
         channel_id = None
@@ -144,7 +122,20 @@ def check_for_upcoming_events():
         if start > now:
             send_reminder(event)
 
-scheduler.add_job(check_for_upcoming_events, 'interval', minutes=180)
+# def send_reminder(event):
+#     channel_id = '#general'
+#     message = f"Reminder: {event['summary']} at {event['start'].get('dateTime', event['start'].get('date'))}"
+#     app.client.chat_postMessage(channel=channel_id, text=message)
+
+# def check_for_upcoming_events():
+#     events = get_meeting_schedule()
+#     now = datetime.datetime.utcnow().isoformat() + 'Z'
+#     for event in events:
+#         start = event['start'].get('dateTime', event['start'].get('date'))
+#         if start > now:
+#             send_reminder(event)
+
+scheduler.add_job(check_for_upcoming_events, 'interval', minutes=1)
 scheduler.start()
 
 # # Summarize Transcript Feature
@@ -182,7 +173,7 @@ def ask_it(ack, respond, command):
     payload = {
         "inputs": user_question,
         "parameters": {
-            "max_length": 250,
+            "max_length": 1000,
             "num_return_sequences": 1
         }
     }
@@ -193,11 +184,6 @@ def ask_it(ack, respond, command):
         respond(answer)
     except Exception as e:
         respond(f"Failed to get a response from the IT support LLM: {str(e)}")
-
-
-
-
-
 
 
 
