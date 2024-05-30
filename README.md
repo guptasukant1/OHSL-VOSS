@@ -11,16 +11,16 @@ Styles were decided, asked queries on card types to be used along with additiona
 ### 16/05/2024:
 Removed a few components - Contact Us, About Us, Blogs (took the styles as backup)
 ### 17/05/2024:
-Details were acquired, and custom components were embedded to the site. Publications of VOSS were added.
+Details of interns were acquired, and custom components were embedded to the site. Publications of VOSS were added.
 ### 18/05/2024:
 Edited the site and custom component embeddings
 
 ## Week 2: Google Sites + Slack Bot With Falcon LLM
 
 e## 21/05/2024:
-Final Changes to the site were made along with adding the details of BCDA, VOSS, ADTP
+Final Changes to the site were made along with adding the interns of BCDA, VOSS, ADTP
 ### 22/05/2024:
-Details of all projects were added and publications were added. Brief on Falcon LLM was given, Research on Falcon LLM was done. Gmail Subject Line change trigger from reply directly without clicking on the hamburger menu was given
+Interns of all projects were added and publications were added. Brief on Falcon LLM was given, Research on Falcon LLM was done. Gmail Subject Line change trigger from reply directly without clicking on the hamburger menu was given
 ### 23/05/2024:
 Doc on Falcon LLM was made, and presented. Group(2) task of Slack Bot with Falcon LLM was assigned. Functions list was made and shared
 ### 24/05/2024:
