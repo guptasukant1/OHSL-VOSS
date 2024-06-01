@@ -136,8 +136,8 @@ def check_for_upcoming_events():
 #         if start > now:
 #             send_reminder(event)
 
-# scheduler.add_job(check_for_upcoming_events, 'interval', minutes=100)
-# scheduler.start()
+scheduler.add_job(check_for_upcoming_events, 'interval', minutes=10)
+scheduler.start()
 
 # # Summarize Transcript Feature
 
