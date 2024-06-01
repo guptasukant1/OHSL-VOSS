@@ -326,18 +326,6 @@ user_cache = {}
 
 # Role and Group Management Feature
 def get_user_id_by_username(username):
-    # users_list = app.client.users_list()
-    # users = users_list['members']
-    # for user in users:
-    #     if 'name' in user and user['name'] == username:
-    #         return user['id']
-    #     if 'profile' in user:
-    #         profile = user['profile']
-    #         if 'display_name' in profile and profile['display_name'] == username:
-    #             return user['id']
-    #         if 'real_name' in profile and profile['real_name'] == username:
-    #             return user['id']
-    # return None
     if username in user_cache:
         return user_cache[username]
 
