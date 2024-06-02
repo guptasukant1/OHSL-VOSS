@@ -1,4 +1,4 @@
-from slack_bolt.adapter.flask import SlackRequestHandler
+# from slack_bolt.adapter.flask import SlackRequestHandler
 from slack_bolt import App
 from slack_bolt.adapter.socket_mode import SocketModeHandler
 from googleapiclient.discovery import build
@@ -13,10 +13,9 @@ import requests
 import datetime
 from slack_sdk.errors import SlackApiError
 import time
-
 load_dotenv()
 
-# Initialize Slack app and Falcon LLM via Hugging Face Inference APICLIENT_SECRETS_FILE
+# Initialize Slack app and Falcon LLM via Hugging Face Inference API
 SLACK_BOT_TOKEN = os.environ.get("SLACK_BOT_TOKEN")
 app = App(token = SLACK_BOT_TOKEN)
 
@@ -123,68 +122,11 @@ def check_for_upcoming_events():
         if start > now:
             send_reminder(event)
 
-# def send_reminder(event):
-#     channel_id = '#general'
-#     message = f"Reminder: {event['summary']} at {event['start'].get('dateTime', event['start'].get('date'))}"
-#     app.client.chat_postMessage(channel=channel_id, text=message)
-
-# def check_for_upcoming_events():
-#     events = get_meeting_schedule()
-#     now = datetime.datetime.utcnow().isoformat() + 'Z'
-#     for event in events:
-#         start = event['start'].get('dateTime', event['start'].get('date'))
-#         if start > now:
-#             send_reminder(event)
 
 scheduler.add_job(check_for_upcoming_events, 'interval', minutes=10)
 scheduler.start()
 
-# # Summarize Transcript Feature
-
-
-# @app.command("/summarize")
-# def summarize_transcript(ack, respond, command):
-#     ack()
-#     file_id = command['text'].strip()
-#     file_info = app.client.files_info(file=file_id)
-#     file_url = file_info['file']['url_private']
-    
-#     headers = {'Authorization': f"Bearer {SLACK_BOT_TOKEN}"}
-#     response = requests.get(file_url, headers=headers)
-    
-#     if response.status_code != 200:
-#         respond(f"Failed to retrieve file: {response.status_code}")
-#         return
-    
-#     transcript = response.text
-    
-#     # Summarize using Falcon 7B model
-#     summary = summarize_with_falcon(transcript)
-#     respond(summary)
-
-# def summarize_with_falcon(transcript):
-#     # This function assumes you have access to Falcon 7B API and its endpoint
-    
-#     headers = {
-#         'Authorization': f'Bearer {API_TOKEN}',
-#         'Content-Type': 'application/json'
-#     }
-    
-#     payload = {
-#         'text': transcript,
-#         'task': 'summarize'
-#     }
-    
-#     response = requests.post(API_URL, headers=headers, json=payload)
-    
-#     if response.status_code != 200:
-#         return f"Error summarizing with Falcon: {response.status_code}"
-    
-#     summary = response.json().get('summary', 'No summary available.')
-#     return summary
-
-
-
+# File Summarization Feature
 user_latest_file = {}
 
 @app.event("file_shared")
@@ -245,29 +187,6 @@ def summarize_transcript(ack, respond, command):
     respond(summary)
 
 def summarize_with_falcon(transcript):
-    # headers = {
-    #     'Authorization': f'Bearer {API_TOKEN}',
-    #     'Content-Type': 'application/json'
-    # }
-    
-    # payload = {
-    #     'text': transcript,
-    #     'task': 'summarize'
-    # }
-    
-    # response = requests.post(API_URL, headers=headers, json=payload)
-    
-    # if response.status_code != 200:
-    #     return f"Error summarizing with Falcon: {response.status_code}"
-    
-    # summary = response.json().get('summary', 'No summary available.')
-    # return summary
-
-    # headers = {
-    #     'Authorization': f'Bearer {API_TOKEN}',
-    #     'Content-Type': 'application/json'
-    # }
-
     payload = {
         "inputs": f"Summarize this file in 20 words: {transcript}",
         # "inputs": f"Summarize this file in 20 words:",
@@ -290,9 +209,6 @@ def summarize_with_falcon(transcript):
         return f"Error parsing response: {str(e)}"
 
     return summary
-
-
-
 
 # Function to query the LLM
 def query_llm(payload):
@@ -324,7 +240,7 @@ def ask_it(ack, respond, command):
 
 user_cache = {}
 
-# Role and Group Management Feature
+# Group Management Feature
 def get_user_id_by_username(username):
     if username in user_cache:
         return user_cache[username]
@@ -345,67 +261,6 @@ def get_user_id_by_username(username):
 
     return None
 
-# roles = {}
-
-# def assign_role(user_id, role):
-#     roles[user_id] = role
-
-# def get_role(user_id):
-#     return roles.get(user_id, "No role assigned")
-
-
-# @app.command("/assign_role")
-# def assign_role_command(ack, respond, command):
-#     ack()
-#     text_parts = command['text'].split()
-#     if len(text_parts) < 2:
-#         respond("Please provide a user and a role. Example: `/assign_role @username role`")
-#         return
-    
-#     username = text_parts[0]
-#     role = ' '.join(text_parts[1:])
-    
-#     if username.startswith('@'):
-#         username = username[1:]  # Remove the '@' character
-
-#     users_list = app.client.users_list()
-#     user_id = None
-#     for user in users_list['members']:
-#         if 'name' in user and user['name'] == username:
-#             user_id = user['id']
-#             break
-
-#     if not user_id:
-#         respond(f"User {username} not found.")
-#         return
-
-#     assign_role(user_id, role)
-#     respond(f"Assigned role {role} to <{user_id}>")
-
-
-# @app.command("/get_role")
-# def get_role_command(ack, respond, command):
-#     ack()
-#     username = command['text'].strip()
-    
-#     if username.startswith('@'):
-#         username = username[1:]  # Remove the '@' character
-
-#     users_list = app.client.users_list()
-#     user_id = None
-#     for user in users_list['members']:
-#         if 'name' in user and user['name'] == username:
-#             user_id = user['id']
-#             break
-
-#     if not user_id:
-#         respond(f"User {username} not found.")
-#         return
-
-#     role = get_role(user_id)
-#     respond(f"<{user_id}> has the role: {role}")
-
-
 @app.command("/create_group")
 def create_group(ack, respond, command):
     ack()
@@ -416,7 +271,7 @@ def create_group(ack, respond, command):
 
     for username in usernames:
         if username.startswith('@'):
-            username = username[1:]  # Remove the '@' character
+            username = username[1:]  # Removes the '@' character from name calls
         user_id = get_user_id_by_username(username)
         if user_id:
             user_ids.append(user_id)
@@ -424,11 +279,6 @@ def create_group(ack, respond, command):
             respond(f"User {username} not found.")
             return
 
-    # channel_response = app.client.conversations_create(name=group_name)
-    # channel_id = channel_response['channel']['id']
-    # for user_id in user_ids:
-    #     app.client.conversations_invite(channel=channel_id, users=user_id)
-    # respond(f"Created group {group_name} with members: {' '.join(usernames)}")
     try:
         channel_response = app.client.conversations_create(name=group_name)
         channel_id = channel_response['channel']['id']
