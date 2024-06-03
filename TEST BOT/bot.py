@@ -21,6 +21,7 @@ app = App(token = SLACK_BOT_TOKEN)
 
 API_TOKEN = os.getenv("API_TOKEN")
 API_URL = "https://api-inference.huggingface.co/models/tiiuae/falcon-7b-instruct"
+# API_URL=os.getenv('API_URL')
 headers = {"Authorization": f"Bearer {API_TOKEN}"}
 
 # Set up the scheduler for reminders

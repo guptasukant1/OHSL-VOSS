@@ -40,3 +40,5 @@ Added the Falcon LLM API call to a test file, worked on the functions a bit and 
 Researched Multi User OAuth Authentication flow setup, made all the functions work except transcript and assign/get roles. Will work on Multi User Auth flows.
 ### 31/05/2024:
 Added Transcript Summarization function of LLM, modified the add to grp and create group, updated the LLM summarizer function as well and explored Google Service Accounts.
+### 01/06/2024:
+Meeting with Anil to show the work done. Showed the Functions of the Slack Bot and explained them in brief with live sharing. Answered queries about what all could be done with Google Sites bot integration.
