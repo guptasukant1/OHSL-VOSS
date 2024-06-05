@@ -44,3 +44,5 @@ Added Transcript Summarization function of LLM, modified the add to grp and crea
 Meeting with Anil to show the work done. Showed the Functions of the Slack Bot and explained them in brief with live sharing. Answered queries about what all could be done with Google Sites bot integration.
 ### 03/05/2024:
 Work on Search Engine for website to be made with integration of Falcon LLM.
+### 04/05/2024:
+Dicussed WhatsApp addition, decided not to go with that, cleared up queries regarding the Search Engine via LlamaIndex and Falcon LLM. 
