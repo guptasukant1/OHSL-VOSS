@@ -42,7 +42,10 @@ Researched Multi User OAuth Authentication flow setup, made all the functions wo
 Added Transcript Summarization function of LLM, modified the add to grp and create group, updated the LLM summarizer function as well and explored Google Service Accounts.
 ### 01/06/2024:
 Meeting with Anil to show the work done. Showed the Functions of the Slack Bot and explained them in brief with live sharing. Answered queries about what all could be done with Google Sites bot integration.
-### 03/05/2024:
+### 03/06/2024:
 Work on Search Engine for website to be made with integration of Falcon LLM.
-### 04/05/2024:
+### 04/06/2024:
 Dicussed WhatsApp addition, decided not to go with that, cleared up queries regarding the Search Engine via LlamaIndex and Falcon LLM. 
+### 05/06/2024:
+
+### 06/06/2024:
