@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>OHSL Search Engine</title>
+</head>
+<body>
+    <h1>OHSL Search Engine</h1>
+    <input type="text" id="searchQuery" placeholder="Enter your query">
+    <button id="searchButton">Search</button>
+    <div id="result"></div>
+
+    <script>
+        document.getElementById('searchButton').addEventListener('click', function() {
+            const query = document.getElementById('searchQuery').value;
+            fetch('/search', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ query: query })
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('result').innerText = data.data;
+            });
+        });
+    </script>
+</body>
+</html>
