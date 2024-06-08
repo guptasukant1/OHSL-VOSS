@@ -47,8 +47,10 @@ Work on Search Engine for website to be made with integration of Falcon LLM.
 ### 04/06/2024:
 Dicussed WhatsApp addition, decided not to go with that, cleared up queries regarding the Search Engine via LlamaIndex and Falcon LLM. 
 ### 05/06/2024:
-
+Read up on Langchain, Llamaindex
 ### 06/06/2024:
-
+Studied about integration steps of Langchain and LlamaIndex along with BS4 for scraping
 ### 07/06/2024:
+Started initial development of the Search Engine and made the BS4 code for web scraping
+### 08/06/2024:
 
