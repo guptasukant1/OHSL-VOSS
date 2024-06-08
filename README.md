@@ -1,5 +1,4 @@
 # Repo for all the work done
-
 ## Week 1: Google Sites/Workspace
 
 ### 13/05/2024:
@@ -54,3 +53,5 @@ Studied about integration steps of Langchain and LlamaIndex along with BS4 for s
 Started initial development of the Search Engine and made the BS4 code for web scraping
 ### 08/06/2024:
 Checked the code for extracting info from the BCDA projects page of OHSL. Falcon LLM meet with interns.
+### 09/06/2024:
+
