@@ -1,4 +1,4 @@
-# OHSL Repo for all the work done
+# Repo for all the work done
 
 ## Week 1: Google Sites/Workspace
 
