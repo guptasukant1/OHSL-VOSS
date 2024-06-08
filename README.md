@@ -53,4 +53,4 @@ Studied about integration steps of Langchain and LlamaIndex along with BS4 for s
 ### 07/06/2024:
 Started initial development of the Search Engine and made the BS4 code for web scraping
 ### 08/06/2024:
-
+Checked the code for extracting info from the BCDA projects page of OHSL. Falcon LLM meet with interns.
