@@ -29,7 +29,7 @@ Updated the google sites project and work up on Slack API
 
 ## Week 3: Slack Bot With Falcon LLM
 
-### 27/05/2024: 
+### 27/05/2024:
 Performed 1st stage dev of slack bot with several features and checked the Google Calendar API integration
 ### 28/05/2024:
 Figured out the Google Calendar API, started using Falcon LLM, worked on the create grp, assign roles and add to grp functions of the bot, while performing tests on features
@@ -41,10 +41,13 @@ Researched Multi User OAuth Authentication flow setup, made all the functions wo
 Added Transcript Summarization function of LLM, modified the add to grp and create group, updated the LLM summarizer function as well and explored Google Service Accounts.
 ### 01/06/2024:
 Meeting with Anil to show the work done. Showed the Functions of the Slack Bot and explained them in brief with live sharing. Answered queries about what all could be done with Google Sites bot integration.
+
+## Week 4: Search Engine for OHSL website
+
 ### 03/06/2024:
 Work on Search Engine for website to be made with integration of Falcon LLM.
 ### 04/06/2024:
-Dicussed WhatsApp addition, decided not to go with that, cleared up queries regarding the Search Engine via LlamaIndex and Falcon LLM. 
+Dicussed WhatsApp addition, decided not to go with that, cleared up queries regarding the Search Engine via LlamaIndex and Falcon LLM.
 ### 05/06/2024:
 Read up on Langchain, Llamaindex
 ### 06/06/2024:
@@ -53,5 +56,8 @@ Studied about integration steps of Langchain and LlamaIndex along with BS4 for s
 Started initial development of the Search Engine and made the BS4 code for web scraping
 ### 08/06/2024:
 Checked the code for extracting info from the BCDA projects page of OHSL. Falcon LLM meet with interns.
+
+## Week 5: Search Engine continued
+
 ### 09/06/2024:
 
