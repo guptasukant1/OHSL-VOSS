@@ -71,3 +71,8 @@ Checked the code for extracting info from the BCDA projects page of OHSL. Falcon
 
 ### 15/06/2024:
 
+
+## Week 6: Search engine conversion to Chat-Bot
+
+### 17/06/2024:
+
