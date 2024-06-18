@@ -76,3 +76,6 @@ Checked the code for extracting info from the BCDA projects page of OHSL. Falcon
 
 ### 17/06/2024:
 
+### 18/06/2024:
+
+
