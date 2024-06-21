@@ -60,9 +60,9 @@ Checked the code for extracting info from the BCDA projects page of OHSL. Falcon
 ## Week 5: Search Engine continued
 
 ### 10/06/2024:
-
+Added LLamaIndex code to the Scraping code, and performed tests.
 ### 11/06/2024:
-
+Changed the Scraping code to allocate images as well.
 ### 12/06/2024:
 
 ### 13/06/2024:
