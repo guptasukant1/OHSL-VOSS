@@ -16,7 +16,7 @@ Edited the site and custom component embeddings
 
 ## Week 2: Google Sites + Slack Bot With Falcon LLM
 
-e## 21/05/2024:
+### 21/05/2024:
 Final Changes to the site were made along with adding the interns of BCDA, VOSS, ADTP
 ### 22/05/2024:
 Interns of all projects were added and publications were added. Brief on Falcon LLM was given, Research on Falcon LLM was done. Gmail Subject Line change trigger from reply directly without clicking on the hamburger menu was given
