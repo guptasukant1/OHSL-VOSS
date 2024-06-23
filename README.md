@@ -87,3 +87,6 @@ Changed the Scraping code to allocate images as well.
 ### 22/06/2024:
 
 
+## Week 7: Final Changes to all the projects
+
+### 
