@@ -68,9 +68,9 @@ Reform the code. Include the Model loaders and vectorize the data read by the sc
 ### 13/06/2024:
 Make separate loaders for the scraped data and read this data which was vectorized.
 ### 14/06/2024:
-Con
+Convert the loaders for txt rather than pdf. Improved the scraping code.
 ### 15/06/2024:
-
+Asked to change the search engine to chat bot. Explored front end options for the chat bot. Will convert the code for chat bot
 
 ## Week 6: Search engine conversion to Chat-Bot
 
