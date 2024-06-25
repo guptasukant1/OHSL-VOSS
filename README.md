@@ -64,11 +64,11 @@ Added LLamaIndex code to the Scraping code, and performed tests.
 ### 11/06/2024:
 Changed the Scraping code to allocate images as well.
 ### 12/06/2024:
-
+Reform the code. Include the Model loaders and vectorize the data read by the scraper.
 ### 13/06/2024:
-
+Make separate loaders for the scraped data and read this data which was vectorized.
 ### 14/06/2024:
-
+Con
 ### 15/06/2024:
 
 
