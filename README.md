@@ -89,4 +89,8 @@ Asked to change the search engine to chat bot. Explored front end options for th
 
 ## Week 7: Final Changes to all the projects
 
-### 
+### 24/06/2024:
+
+### 25/06/2024:
+
+
