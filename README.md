@@ -75,7 +75,7 @@ Asked to change the search engine to chat bot. Explored front end options for th
 ## Week 6: Search engine conversion to Chat-Bot
 
 ### 17/06/2024:
-
+Researched several models for the chat bot along with gradio configs.
 ### 18/06/2024:
 
 ### 19/06/2024:
