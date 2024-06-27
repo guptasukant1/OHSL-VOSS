@@ -86,11 +86,19 @@ Explored other options for the entire chat bot using chainlit and other configs.
 
 ### 22/06/2024:
 
+-------------------------------------------------------------
 
 ## Week 7: Final Changes to all the projects
 
 ### 24/06/2024:
 
 ### 25/06/2024:
+
+### 26/06/2024:
+
+### 27/06/2024:
+Review meeting of the chat bot with another team to allow integration with the drupal website.
+### 28/06/2024:
+----
 
 
