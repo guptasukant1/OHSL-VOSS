@@ -1,4 +1,4 @@
-# 4 tasks
+# **4 tasks**
 ## Week 1: Google Sites/Workspace
 
 ### 13/05/2024:
