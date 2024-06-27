@@ -77,11 +77,11 @@ Asked to change the search engine to chat bot. Explored front end options for th
 ### 17/06/2024:
 Researched several models for the chat bot along with gradio configs.
 ### 18/06/2024:
-Implemented models for the chat bot with various configurations.
+Implemented models for the chat bot with various configurations. Explored API for several models.
 ### 19/06/2024:
-
+Implemented APIs of models via Hugging Face Inference API,  allowing for better response times. Lack of Inference for model was found.
 ### 20/06/2024:
-
+Explored other options for the entire chat bot using chainlit and other configs.
 ### 21/06/2024:
 
 ### 22/06/2024:
