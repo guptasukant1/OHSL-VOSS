@@ -32,11 +32,11 @@ Updated the google sites project and work up on Slack API
 ### 27/05/2024:
 Performed 1st stage dev of slack bot with several features and checked the Google Calendar API integration
 ### 28/05/2024:
-Figured out the Google Calendar API, started using Falcon LLM, worked on the create grp, assign roles and add to grp functions of the bot, while performing tests on features
+Figured out the Google Calendar API, started using Falcon LLM, worked on the create group, assign roles and add to grp functions of the bot, while performing tests on features
 ### 29/05/2024:
 Added the Falcon LLM API call to a test file, worked on the functions a bit and checked ways to implement the Falcon 7B model. Before settling to use the API, tried downloading the model locally, loading on colab, etc.
 ### 30/05/2024:
-Researched Multi User OAuth Authentication flow setup, made all the functions work except transcript and assign/get roles. Will work on Multi User Auth flows.
+Researched Multi User OAuth Authentication flow setup, made all the functions work except transcript and assign/get roles.
 ### 31/05/2024:
 Added Transcript Summarization function of LLM, modified the add to grp and create group, updated the LLM summarizer function as well and explored Google Service Accounts.
 ### 01/06/2024:
