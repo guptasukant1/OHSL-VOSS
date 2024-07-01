@@ -83,24 +83,23 @@ Implemented APIs of models via Hugging Face Inference API,  allowing for better 
 ### 20/06/2024:
 Explored other options for the entire chat bot using chainlit and other configs.
 ### 21/06/2024:
-
+Tested other configurations with chainlit and APIs of HF Inference. Tried more models.
 ### 22/06/2024:
-
--------------------------------------------------------------
+Restructured the code and tried 3 more models.
 
 ## Week 7: Final Changes to all the projects
 
 ### 24/06/2024:
-
+Started the report and decided on the final structure of code.
 ### 25/06/2024:
-
+Changed the Gradio Interface a little bit.
 ### 26/06/2024:
-
+Nothing much besides the updates on final report.
 ### 27/06/2024:
 Review meeting of the chat bot with another team to allow integration with the drupal website.
 ### 28/06/2024:
 Work on report was started.
 ### 29/06/2024:
-Report continued
-
-
+Report continued.
+### 01/07/2024:
+Completed the Report.
