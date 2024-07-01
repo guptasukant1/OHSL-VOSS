@@ -99,6 +99,8 @@ Explored other options for the entire chat bot using chainlit and other configs.
 ### 27/06/2024:
 Review meeting of the chat bot with another team to allow integration with the drupal website.
 ### 28/06/2024:
-----
+Work on report was started.
+### 29/06/2024:
+Report continued
 
 
