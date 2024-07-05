@@ -1,0 +1,15 @@
+{
+    "web":{
+        "client_id":"1086649553607-oddeoj4sd80ta78e4pj8st7u2aepj1kk.apps.googleusercontent.com",
+        "project_id":"ohsl-bot",
+        "auth_uri":"https://accounts.google.com/o/oauth2/auth",
+        "token_uri":"https://oauth2.googleapis.com/token",
+        "auth_provider_x509_cert_url":"https://www.googleapis.com/oauth2/v1/certs",
+        "client_secret":"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",
+        "redirect_uris":[
+            "http://localhost:3000/oauth2callback",
+            "http://localhost:3500/"
+
+        ]
+    }
+}
