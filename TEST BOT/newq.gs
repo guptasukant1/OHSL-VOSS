@@ -1,5 +1,5 @@
 var FALCON_API_URL = "https://api-inference.huggingface.co/models/tiiuae/falcon-7b-instruct";
-var FALCON_API_TOKEN = "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";
+var FALCON_API_TOKEN = ""; 
 
 // Entry point for the homepage
 function onHomepage(e) {
