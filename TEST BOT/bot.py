@@ -9,6 +9,7 @@ from google.auth.transport.requests import Request
 from googleapiclient.discovery import build
 from dotenv import load_dotenv
 import os
+import json
 import requests
 import datetime
 from slack_sdk.errors import SlackApiError
@@ -34,8 +35,8 @@ def get_google_calendar_service():
     creds = None
     # The file token.json stores the user's access and refresh tokens, and is created
     # automatically when the authorization flow completes for the first time.
-    creds_path = os.path.join(os.path.dirname(__file__), 'credentials.json')
-    token_path = os.path.join(os.path.dirname(__file__), 'token.json')
+    creds_path = os.path.join(os.path.dirname(__file__), 'credential.json')
+    token_path = os.path.join(os.path.dirname(__file__), 'tokens.json')
 
     if os.path.exists('token.json'):
         creds = Credentials.from_authorized_user_file(token_path, SCOPES)
@@ -182,6 +183,7 @@ def summarize_transcript(ack, respond, command):
 
 
     transcript = response.text
+    # print(response)
 
     # Summarize using Falcon 7B model
     summary = summarize_with_falcon(transcript)
@@ -189,33 +191,55 @@ def summarize_transcript(ack, respond, command):
 
 def summarize_with_falcon(transcript):
     payload = {
-        "inputs": f"Summarize this file in 20 words: {transcript}",
-        # "inputs": f"Summarize this file in 20 words:",
+        "inputs": f"Please summarize the following text into 2 lines and extract the key information only`: {transcript}",
         "parameters": {
-            "max_length": 500,
+            "max_length": 8000,
             "num_return_sequences": 1
         }
     }
 
-    response = requests.post(API_URL, headers=headers, json=payload)
+    # response = requests.post(API_URL, headers=headers, json=payload)
 
-    if response.status_code != 200:
-        return f"Error summarizing with Falcon: {response.status_code} - {response.text}"
+    # if response.status_code != 200:
+    #     return f"Error summarizing with Falcon: {response.status_code} - {response.text}"
+
+    # try:
+    #     result = response.json()
+    #     summary = result[0]['generated_text']
+    #     print(response)
+    # except (ValueError, KeyError, IndexError) as e:
+    #     return f"Error parsing response: {str(e)}"
+
+    # return summary
+    options = {
+        "method": "POST",
+        "contentType": "application/json",
+        "headers": {
+            "Authorization": f"Bearer {API_TOKEN}"
+        },
+        "payload": json.dumps(payload),
+        "muteHttpExceptions": True
+    }
 
     try:
-        result = response.json()
-        summary = result[0]['generated_text']
-        # summary = result
-    except (ValueError, KeyError, IndexError) as e:
-        return f"Error parsing response: {str(e)}"
-
-    return summary
+        response = requests.post(API_URL, headers=options["headers"], json=payload)
+        print("Response Status Code:", response.status_code)  # Debugging: Print status code
+        print("Response Text:", response.text)  # Debugging: Print response text
+        data = response.json()
+        print("Response JSON Data:", data)  # Debugging: Print parsed JSON data
+        if data and len(data) > 0 and 'generated_text' in data[0]:
+            return data[0]['generated_text']
+        elif data and 'error' in data:
+            return f"Error from Falcon API: {data['error']}"
+        else:
+            return "No summary available."
+    except Exception as e:
+        return f"Error fetching summary: {str(e)}"
 
 # Function to query the LLM
 def query_llm(payload):
     response = requests.post(API_URL, headers=headers, json=payload)
     return response.json()
-
 
 # Command to provide IT support using LLM
 @app.command("/ask_it")

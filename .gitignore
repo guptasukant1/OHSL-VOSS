@@ -3,5 +3,6 @@ credentials.json
 token.json
 downloaded_images
 images
-dummy.json
-dummytoken.json
+credential.json
+tokens.json
+.env_copy
