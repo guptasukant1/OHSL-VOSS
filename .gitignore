@@ -6,3 +6,4 @@ images
 credential.json
 tokens.json
 .env_copy
+temp.txt
