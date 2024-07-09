@@ -35,8 +35,8 @@ def get_google_calendar_service():
     creds = None
     # The file token.json stores the user's access and refresh tokens, and is created
     # automatically when the authorization flow completes for the first time.
-    creds_path = os.path.join(os.path.dirname(__file__), 'credential.json')
-    token_path = os.path.join(os.path.dirname(__file__), 'tokens.json')
+    creds_path = os.path.join(os.path.dirname(__file__), 'credentials.json')
+    token_path = os.path.join(os.path.dirname(__file__), 'token.json')
 
     if os.path.exists('token.json'):
         creds = Credentials.from_authorized_user_file(token_path, SCOPES)
@@ -198,19 +198,6 @@ def summarize_with_falcon(transcript):
         }
     }
 
-    # response = requests.post(API_URL, headers=headers, json=payload)
-
-    # if response.status_code != 200:
-    #     return f"Error summarizing with Falcon: {response.status_code} - {response.text}"
-
-    # try:
-    #     result = response.json()
-    #     summary = result[0]['generated_text']
-    #     print(response)
-    # except (ValueError, KeyError, IndexError) as e:
-    #     return f"Error parsing response: {str(e)}"
-
-    # return summary
     options = {
         "method": "POST",
         "contentType": "application/json",
