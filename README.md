@@ -1,4 +1,4 @@
-# **4 tasks**
+# **OHSL VOSS tasks**
 ## Week 1: Google Sites/Workspace
 
 ### 13/05/2024:
